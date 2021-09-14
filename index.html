@@ -3,17 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Movie Night</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <style>
-        .row {
-            background-color: red;
-        }
-
-        .is-half {
-         background-color: aqua;   
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
   <body>
   <section class="section">
@@ -32,12 +24,10 @@
         <button id="movieBtn">New movie</button>
         </div>
 
-        <div class="column is-half" id="recipeContainer"> main
-
-                <div class="row" id="recipeImg"> photo</div>
-                <div class="row">recipe</div>
-                <button id="recipeBtn">New recipe</button>
-        </div> 
+        <div class="col is-half">
+               <button class="button-primary" id="get_meal">Get Meal</button>
+               <div id="meal" class="row meal"></div>
+        </div>
 
     </div>
 
@@ -48,5 +38,8 @@
 
     </div>
   </section>
+
+  <script src="assets/js/script.js"></script>
+
   </body>
 </html>
