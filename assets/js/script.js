@@ -517,7 +517,10 @@ var buttonClickHandler = function(event) {
   }
 
   if (mySearchButton !== null) {
-      var myActorId = getActorId(document.getElementById("idSearch").value);
+    var myActor = document.getElementById("idSearch").value;
+    if (myActor !== '') {
+      getActorId(document.getElementById("idSearch").value);
+    }
   }
 
 }

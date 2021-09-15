@@ -1,3 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+--green:#00674C;
+--gray:#B0B0B0;
+}
+
+.button-color {
+  background-color: --green;
+}
+
+header {
+  width: 100%;
+  padding: 20px 35px;
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+  
+header h1 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  background: var(--gray);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0; 
+}
+  
+footer div {
+  line-height: 1.5;
+  text-align: right;
+}
+  
+footer a {
+  color: var(--green);
+  font-size: 24px;
+}
+
 .medium-text {
   font-size: 12px;
 }
