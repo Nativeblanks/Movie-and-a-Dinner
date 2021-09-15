@@ -323,10 +323,16 @@ var getGenres = function() {
               movieCardContainer.className = "columns";
               movieContainer.appendChild(movieCardContainer);
 
+              // h1
+              h1Element = document.createElement("h1");
+              h1Element.className = "is-size-5";
+              h1Element.textContent = "Choose Genre";
+              movieContainer.appendChild(h1Element);
+
               for (index=0; index < aryMovie.genres.length; index++) {
                   // card
                   buttonElement = document.createElement("button");
-                  buttonElement.className = "button is-primary is-outlined";
+                  buttonElement.className = "button is-primary is-outlined give-me-space";
                   buttonElement.id = "idGenre";
                   buttonElement.setAttribute("data-genreId", aryMovie.genres[index].id);
                   buttonElement.textContent = aryMovie.genres[index].name;
@@ -416,29 +422,52 @@ var getActorId = function(myActor) {
 }
 
 var searchMovies = function() {
-  console.log("search movies");
   movieContainer.innerHTML = "";
+  startOverButton();
 
   // columns
   movieDivContainer = document.createElement("div");
   movieContainer.appendChild(movieDivContainer);
 
+  // div
+  divElement = document.createElement("div");
+  divElement.className = "field";
+  movieContainer.appendChild(divElement);
+
   // label
   labelElement = document.createElement("label");
+  labelElement.className = "label";
   labelElement.textContent = "Enter an actor/actress:"
-  movieDivContainer.appendChild(labelElement);
+  divElement.appendChild(labelElement);
+
+  // div
+  divElement2 = document.createElement("div");
+  divElement2.className = "control has-icons-left";
+  divElement.appendChild(divElement2);
 
   // input
   inputElement = document.createElement("input");
+  inputElement.className = "input is-success"
+  inputElement.placeholder = "enter a name"
   inputElement.id = "idSearch";
-  movieDivContainer.appendChild(inputElement);
+  divElement2.appendChild(inputElement);
+
+  // span
+  spanElement = document.createElement("span");
+  spanElement.className = "icon is-small is-left"
+  divElement2.appendChild(spanElement);
+
+  // i 
+  iElement = document.createElement("i");
+  iElement.setAttribute("class", "fas fa-user");
+  spanElement.appendChild(iElement);
 
   // button
   buttonElement = document.createElement("button");
-  buttonElement.className = "button is-primary";
+  buttonElement.className = "button is-primary give-me-space";
   buttonElement.textContent = "Search";
   buttonElement.setAttribute("data-search", "0");    
-  movieContainer.appendChild(buttonElement);
+  divElement2.appendChild(buttonElement);
 }
 
 var getActorMovies = function(myActorId) {
