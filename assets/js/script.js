@@ -23,6 +23,8 @@ const createMeal = (meal) => {
     }
   }
   
+
+//   assigning format to data grabbed from the Api 
   const newInnerHTML = `
     <div class="row">
       <div class="column">
@@ -57,5 +59,8 @@ const createMeal = (meal) => {
     </div>` : ''}
   `;
   
+
   meal_container.innerHTML = newInnerHTML;
 }
+
+
