@@ -12,6 +12,11 @@ var inputElement;
 const get_meal_btn = document.getElementById('get_meal');
 const meal_container = document.getElementById('meal');
 
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement
+
+// Get random meal button actions
+
 get_meal_btn.addEventListener('click', () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(response => response.json())
@@ -32,6 +37,8 @@ const createMeal = (meal) => {
     }
   }
   
+
+//   assigning format to data grabbed from the Api 
   const newInnerHTML = `
     <div class="row">
       <div class="column">
@@ -66,12 +73,23 @@ const createMeal = (meal) => {
     </div>` : ''}
   `;
   
+
   meal_container.innerHTML = newInnerHTML;
-}
+};
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
+// Scroll to top
+function scrollToTop() {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop)
 
 /*
   ----------------------------------------------------------------------
