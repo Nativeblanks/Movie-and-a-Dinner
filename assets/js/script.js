@@ -12,6 +12,11 @@ var inputElement;
 const get_meal_btn = document.getElementById('get_meal');
 const meal_container = document.getElementById('meal');
 
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement
+
+// Get random meal button actions
+
 get_meal_btn.addEventListener('click', () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then(response => response.json())
@@ -70,14 +75,21 @@ const createMeal = (meal) => {
   
 
   meal_container.innerHTML = newInnerHTML;
-}
+};
 
-<<<<<<< HEAD
-
-=======
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
+// Scroll to top
+function scrollToTop() {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop)
 
 /*
   ----------------------------------------------------------------------
@@ -563,4 +575,3 @@ var buttonClickHandler = function(event) {
 initializeMovieContainer();
 
 movieContainer.addEventListener("click", buttonClickHandler);
->>>>>>> 31091cf2142946f35d6c4bfe64fd18dc8ed23aea
