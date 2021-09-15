@@ -50,12 +50,10 @@ header h1 {
 }
 
 footer {
-  /* background: var(--gray); */
   padding: 40px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* width: 100%; */
   position: fixed;
   left: 40%;
   bottom: 0; 
